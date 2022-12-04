@@ -1,0 +1,109 @@
+.video-react .video-react-big-play-button {
+    font-size: 3em;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 3rem !important;
+    display: block;
+    top: 10px;
+    left: 10px;
+    padding: 0;
+    cursor: pointer;
+    opacity: 1;
+    border: 0.06666em solid #fff;
+    background-color: #2B333F;
+    background-color: rgba(43, 51, 63, 0.7);
+    border-radius: 50% !important;
+    transition: all 0.4s;
+	margin-left: -23px !important;
+}
+img.livestoreLogo {
+    height: 3rem;
+    width: 3rem;
+}
+.livestoreLogo {
+    display: flex;
+    align-items: center;
+}
+.livecardheader {
+    position: absolute;
+    z-index: 100;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+	background: linear-gradient(0deg, rgba(217, 217, 217, 0) 0%, #000000c9 100%) !important;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+.livecardfooter {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #000000 100%) !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    bottom: 0px;
+    height: 6rem;
+    width: 100%;
+    align-items: flex-end;
+    font-size: 15px;
+    font-weight: 300;
+    overflow: hidden;
+}
+b.livestorename {
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: none !important;
+}
+.livecardsContainer {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+	overflow: scroll;
+}
+.LiveVideoCard {
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+	margin-right: 1rem;
+	border-radius: 10px;
+}
+.livecardsContainer::-webkit-scrollbar {
+	display: none;
+  }
+.liversvp{
+    color:white;
+    border:1px solid white;
+    border-radius:5px;
+    padding-inline: 7px;
+}
+.demoimg{
+    width:100%;
+    height:auto;
+    max-height: 20rem;
+}
+.Recorded.livecardfooter {
+    width: 100%;
+}
+.RecordedLiveVideoCard {
+    position: relative;
+}

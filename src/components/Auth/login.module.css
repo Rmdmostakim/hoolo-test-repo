@@ -1,0 +1,46 @@
+.loginForm{
+    width: 98.5%;
+    padding: 10px;
+    text-align: center;
+    min-height: 75vh;
+}
+.loginForm .logo img{
+    width: 200px;
+}
+.loginForm button{
+    border: none !important;
+    box-shadow: none !important;
+}
+.loginForm form{
+    text-align: left;
+}
+.loginForm form label{
+    color: #000000;
+}
+.loginForm form input{
+    box-shadow: none !important;
+}
+
+.socialIcon{
+    width: 30px;
+}
+.ssImg{
+    width: 100%;
+    height: auto;
+}
+.verify{
+    position: relative;
+}
+@media only screen and (max-width: 767px){
+    .loginForm{
+        width: 98.5%;
+        padding: 10px;
+        text-align: center;
+        min-height: 75vh;
+    }
+}
+@media (max-width: 599px){
+    .ssCol{
+        display: none;
+    }
+}

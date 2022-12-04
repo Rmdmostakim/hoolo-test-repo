@@ -1,0 +1,30 @@
+.video-react .video-react-poster {
+    border-radius: 10px;
+}
+.video-react .video-react-video {
+    border-radius: 10px;
+}
+.video-react {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+img.discoverbigimg {
+    width: 100%;
+    height: auto;
+}
+.discoverbigimgdiv {
+    position: relative;
+}
+.shopnowdiv {
+    display: flex;
+    justify-content: center;
+    bottom: 4vw;
+}
+button.shopnow.btn.btn-none.btn-sm {
+    font-size: 2vw;
+    background: white;
+    border-radius: 10px;
+}
+button.shopnow.btn.btn-none.btn-sm:hover {
+    background: rgb(0, 0, 0);
+    color: white;
+}

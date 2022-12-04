@@ -1,0 +1,61 @@
+.subscription-card {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 20px;
+	box-shadow: 0 0 11px #ececec;
+	padding: 24px 12px;
+	position: relative;
+	text-align: center;
+	transition-duration: 0.4s;
+}
+.subscription-card::after {
+	background: #dcdcdc none repeat scroll 0 0;
+	border-radius: 0 0 5px 6px;
+	bottom: -4px;
+	content: "";
+	height: 7px;
+	left: 15px;
+	position: absolute;
+	right: 15px;
+	z-index: -1;
+}
+.subscription-card:hover::after {
+	background: #1c405d none repeat scroll 0 0;
+}
+.channels-title a {
+	color: #000 !important;
+	font-weight: 500;
+	text-decoration: none;
+}
+.channels-view {
+	color: #acacac;
+}
+.subscription-card-image .btn {
+	font-size: 12px;
+	padding: 3px 10px;
+}
+.subscription-card-image .btn strong {
+	margin: 0 0 0 5px;
+}
+.subscription-card-image img {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 50px;
+	box-shadow: 0 0 2px #ccc;
+	height: 50px;
+	margin: 1px 0 8px;
+	object-fit: scale-down;
+	transform: scale(1);
+	width: 50px;
+}
+.channels-card-image-btn {
+	margin: 3px 0 7px;
+}
+
+
+
+.visitbtn{
+	background: linear-gradient(to top right, #7767f0 -1%, #2babf8 100%) !important;
+}
+.followbtn{
+    background-color: #ffc502  !important;
+    color:#1c405d !important;
+}

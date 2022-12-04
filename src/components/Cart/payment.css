@@ -1,0 +1,33 @@
+.payment-page{
+    min-height: 65vh;
+}
+.cashPayment.card {
+    border-radius: 25px !important;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem !important;
+    margin-bottom: 0px !important;
+}
+.bkashPayment.card {
+    border-radius: 25px !important;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem !important;
+    margin-bottom: 0px !important;
+}
+button.payButton {
+    color: #000000;
+    border: 1px solid #ffce2c;
+    background-color: #ffce2c;
+    border-radius: 8px;
+    padding: 5px;
+    padding-inline: 15px;
+
+}
+button.payButton:hover {
+    color: #ffffff;
+}
+.payText{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,113 @@
+ 
+.product-card-list{
+    border: 2px solid white;
+    border-radius: 15px;
+    width: 90% !important;
+    margin: 5px;
+    height: auto !important;
+    background: white;
+    box-shadow: 0 0 9px #fffefe;
+	display: inline-block;
+}
+.product-card-list .product-card-image img{
+	float: left;
+ 
+	margin: 8px;
+    padding: 0;
+	width: 60px !important;
+    height: 60px !important;
+
+}
+.product-card-list .video-card-body {
+    margin-top: 8px;
+	padding: 2px;
+  
+}
+.price{
+    color: black;
+}
+.priceLink{
+    color: black !important;
+}
+ 
+.product-card-list .video-card-body .product-title a {
+	font-size: 13px;
+    
+   
+
+}
+ 
+.product-card-list .video-card-body .product-title {
+	line-height: 17px;
+     
+}
+.product-card-list .video-card-body .right-action {
+	opacity: 0;
+}
+.product-card-list:hover .video-card-body .right-action {
+	opacity: unset;
+}
+
+
+
+
+ 
+
+ 
+ 
+ 
+
+@media (max-width: 575.98px) {
+	.single-video-author .float-right {
+		float: none !important;
+		margin: 0 0 14px;
+	}
+	.single-video-author {
+		text-align: center;
+	}
+	.single-video-author img {
+		float: none;
+		margin: 0 0 5px;
+	}
+	.product-card-image img {
+		width: 100%;
+	}
+	 
+}
+
+@media (max-width: 576px)   {
+ 
+	 
+   
+	.smFixedVideo iframe{
+      height: 200px;
+	
+      
+	}
+	.single-product-title h2 {
+		font-size: 12px;
+	}
+	 
+	 .single-video-author{
+		 display: none;
+	 }
+	 
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.product-card-image img {
+		width: 100%;
+	}
+	 
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.product-card-image img {
+		width: 100%;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.product-card-image img {
+		width: 100%;
+	}
+	 
+}

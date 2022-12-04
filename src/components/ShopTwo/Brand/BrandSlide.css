@@ -1,0 +1,15 @@
+.brand-item{
+	margin: 5px;
+	height: 100px;
+}
+
+.brand-item img {
+	height: 100%;
+	width: 100%;
+	border-radius: none;
+	border: 1px solid #bfbfbf;
+	box-shadow: 0 0 2px #ccc;
+	/* transform: scale(1); */
+
+
+}

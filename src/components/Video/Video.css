@@ -1,0 +1,206 @@
+
+.videoBakground{
+	background: #eceaea !important;
+}
+.mainVideo-card {
+	background: rgb(252, 252, 252) none repeat scroll 0 0;
+	border-radius: 15px;
+	box-shadow: 0 0 11px #c4c1c1;
+	position: relative;
+	transition-duration: 0.4s;
+	margin-top: 15px;
+}
+
+.mainVideo-card::after {
+	background: #ffffff none repeat scroll 0 0;
+	border-radius: 0 0 5px 6px;
+	bottom: -4px;
+	content: "";
+	height: 7px;
+	left: 15px;
+	position: absolute;
+	right: 15px;
+	z-index: -1;
+}
+
+.mainVideo-card-header{
+	border-radius: 5px;
+	padding: 5px;
+	height: 5rem;
+    overflow-y: hidden;
+	display: flex;
+	align-items: center;
+}
+.product-card-body {
+    overflow: hidden;
+    padding-top: 5px;
+}
+.mainVideo-card-header-profile{
+	display: flex;
+	padding: 0 5px;
+	width: 100%;
+}
+.video-head-detail {
+    width: 100%;
+	padding-left: 5px;
+}
+.videocard-title {
+    display: flex;
+    justify-content: space-between;
+}
+.mainVideo-card-header-profile-info img{
+	border-radius: 50px;
+	box-shadow: 0 0 2px rgb(179, 42, 42);
+	height: 40px;
+	object-fit: scale-down;
+	transform: scale(1);
+	width: 40px;
+}
+.mainVideo-card-header-profile-info .title{
+	margin-top: -32px;
+	margin-left: 45px; 
+	font-size: 15px;
+	display: flex;
+	color: #183153;
+	flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .video-player-controlbar{
+	 
+} */
+.video-player-frame{
+	padding-top: 0px !important;
+	height: 300px !important;
+
+}
+.mainVideo-title a {
+	color: #183153 !important;
+	font-weight: 500;
+	text-decoration: none;
+}
+.mainVideo-view {
+	color: #acacac;
+}
+ 
+.mainVideo-card-body .btn {
+	font-size: 12px;
+	padding: 3px 10px;
+}
+.mainVideo-card-body .btn strong {
+	margin: 0 0 0 5px;
+}
+.mainVideo-card-body img {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 50px;
+	box-shadow: 0 0 2px #ccc;
+	height: 80px;
+	margin: 1px 0 8px;
+	object-fit: scale-down;
+	transform: scale(1);
+	width: 80px;
+}
+.mainVideo-card-body-btn {
+	margin: 3px 0 7px;
+}
+.mainVideo-card-header-title p{
+	color: #000;
+}
+
+.mainVideo-card-product{
+  padding: 0 5px;
+  height: 6rem;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.mainVideo-card-footer{
+	border-top: 1px solid #cbcfd4;
+	margin: 0px 20px;
+ 
+}
+.mainVideo-card-footer-content{
+	padding:5px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.follow{
+	font-size: 12px;
+	color: blue; 
+}
+
+.follow::before{
+	content: '.';
+	position: relative;
+	font-size: 15px;
+	top:-3px;
+	font-weight: bolder;
+	 
+}
+
+.followIcon{
+	font-size: 14px;
+	color: #183153;
+	
+	 
+}
+.followIcon::before{
+	content: '.';
+	position: relative;
+	font-size: 15px;
+	top:-4px;
+	font-weight: bolder;
+	 
+}
+
+.showFollow{
+	visibility: hidden;
+	transition: all 0.5s;
+}
+
+.emtyText{
+	margin: 50px;
+	color: #000;
+	font-size: 25px;
+	text-align: center;
+}
+.commentbody{
+	overflow-y: scroll;
+	height: 400px;
+}
+.comment-card-body {
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+.comment-card-body::-webkit-scrollbar-track {
+	background: #e9e9e9; 
+  }
+  .comment-card-body::-webkit-scrollbar-thumb {
+	background: #888; 
+  }
+  .comment-card-body::-webkit-scrollbar {
+	width: 3px;
+  }
+  .container.mv1 {
+	margin-top: 3rem;
+}
+
+
+  @media (min-width: 200px) and (max-width: 575px)
+  {
+	.container.mv1 {
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-top: 3rem;
+	}
+	.col-mv.col-xl-4.col-sm-6 {
+	padding-right: 0;
+    padding-left: 0;	
+	}
+	.mainVideo-card {
+		border-radius: 0px;
+	}
+  }
+

@@ -1,0 +1,20 @@
+.container.card.meeting {
+    padding: 3rem;
+    font-size: 16px;
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sec1 {
+    text-align: center;
+}
+input.inputmeet {
+    width: 16rem;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+button.meetbtn.btn.btn-primary {
+    background: #FFC502 !important;
+    border-radius: 5px;
+}

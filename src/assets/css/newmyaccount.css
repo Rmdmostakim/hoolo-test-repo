@@ -1,0 +1,98 @@
+.card.perCard {
+	padding: 1rem;
+	border-radius: 2px !important;
+}
+.per_order_col.col-md-3.col-sm-12 {
+    display: flex;
+    align-items: center;
+}
+.profileitem {
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px !important;
+    margin: 1rem;
+	border-bottom: 1px solid rgb(185, 185, 185);
+	padding-bottom: 1rem;
+}
+.profilefixdiv {
+    max-height: 20rem;
+    overflow-y: scroll;
+}
+.f_dateinfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.l_dateinfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+@media screen and (min-width: 200px) and (max-width: 450px)
+{
+    .profileitem {
+        display: flex;
+        flex-direction: column;
+        border-radius: 2px !important;
+        margin: 1rem;
+        border-bottom: 1px solid rgb(185, 185, 185);
+        padding-bottom: 1rem;
+        align-items: center;
+    }
+    .f_dateinfo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .l_dateinfo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .lf_info {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 451px) and (max-width: 800px)
+{
+    .f_dateinfo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .l_dateinfo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}

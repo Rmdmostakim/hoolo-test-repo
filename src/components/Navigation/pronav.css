@@ -1,0 +1,56 @@
+
+.full{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: fixed;
+    bottom: 0rem;
+    height: 50px;
+    z-index: 100;
+}
+.blue{
+    background-color: #2294FF;
+    height: 50px;
+    width: 50%;
+}
+.navy{
+    background-color: #1C405D;
+    height: 50px;
+    width: 50%;
+}
+.pronav {
+    display: flex;
+    position: absolute;
+    width: 100%;
+
+}
+.watchnow {
+    width: 100%;
+    height: 50px;
+    background: #2294FF;
+    transform: skew(-20deg);
+    color: white;
+    border: none;
+
+}
+.watchnow a{
+    color: #ffffff;
+}
+.buynow{
+    width: 100%;
+    height: 50px;
+    transform: skew(-20deg);
+    background: #FFC502;
+    color: white;
+    border: none;
+
+}
+.addtocart{
+    width: 100%;
+    height: 50px;
+    background: #1C405D;
+    transform: skew(-20deg);
+    color: white;
+    border: none;
+}

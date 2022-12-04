@@ -1,0 +1,21 @@
+img.brandimg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ffc502;
+}
+
+
+.brandimgdiv {
+    width: 192px;
+    height: 180px;
+}
+
+@media (max-width: 640px)
+{
+    .brandimgdiv {
+        width: 130px;
+        height: 110px;
+    }
+}

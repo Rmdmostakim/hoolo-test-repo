@@ -1,0 +1,18 @@
+.pagination .page-item .page-link {
+	background: transparent none repeat scroll 0 0;
+	border: medium none;
+	color: #000;
+	line-height: 20px;
+}
+.pagination .page-item.active .page-link {
+	background: linear-gradient(to top right, #7767f0 -1%, #2babf8 100%);
+	border-radius: 5px;
+	color: #fff;
+	height: 30px;
+	margin: 0 7px;
+	text-align: center;
+	width: auto;
+}
+.pagination .page-item.disabled .page-link {
+	opacity: 0.5;
+}

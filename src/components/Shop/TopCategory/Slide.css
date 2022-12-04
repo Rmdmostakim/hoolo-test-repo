@@ -1,0 +1,41 @@
+.shop-category-item img {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 40px;
+	box-shadow: 0 0 2px #ccc;
+	height: 60px;
+	margin: 1px 0 8px;
+	object-fit: scale-down;
+	transform: scale(1);
+	width: 60px;
+}
+.shop-category-item:hover img {
+	transform: scale(1.09);
+	transition-duration: 0.4s;
+	 
+}
+.shop-category-item {
+	background: #fff none repeat scroll 0 0;
+	border-radius: 25px;
+	border: 1px solid #ffc502 ;
+	text-align: center;
+	margin: 0 1px;
+ 
+}
+.top-category .shop-category-item {
+	padding: 20px 11px;
+}
+.shop-category-item h6 {
+	font-size: 13px;
+	margin: 5px 0 3px;
+	overflow: hidden;
+	color: #1c405d !important;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 700;
+}
+
+.shop-category-item p {
+	font-size: 11px;
+	font-weight: 500;
+	margin: 0;
+}

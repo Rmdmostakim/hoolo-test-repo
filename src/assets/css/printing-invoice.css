@@ -1,0 +1,63 @@
+.invoice-box {
+    width: 1000px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 24px;
+    color: #555;
+}
+.inv-top {
+    display: flex;
+    justify-content: space-between;
+}
+.thank.mb-2.col-md-6.col-sm-6 {
+    display: flex;
+    align-items: center;
+}
+.invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+}
+.invoice-box .logo {
+    width: 150px;
+}
+.invoice-box .inv {
+    width: 100%;
+}
+.invoice-box .top-right {
+    text-align: right;
+}
+.invoice-box th {
+    width: 20%;
+}
+
+.invoice-box .total {
+    font-size: 20px;
+    background: #ffc502a3;
+}
+.invoice-box .heading 
+{
+    background-color: darkgrey;
+}
+.invoice-box .main-table
+ {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+ }
+ .totalinfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+ }

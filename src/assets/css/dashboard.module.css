@@ -1,0 +1,115 @@
+.dashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.cards{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.profileName{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: x-large;
+}
+.profileInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+}
+.infoTab{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.icons{
+    font-size: x-large;
+}
+.orders{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.ordersTitle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+}
+.ordersTab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.liveBanner{
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+.liveBanner img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+.offcanvas{
+    min-height: 100vh;
+    min-width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top:0px;
+    background-color: #ffffff;
+}
+.colorBox{
+    min-width: 30px;
+    min-height: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-right: 2px;
+}
+.sizeBox{
+    width: 40px;
+    height: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 2px;
+}

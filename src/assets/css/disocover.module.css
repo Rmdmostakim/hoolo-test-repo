@@ -1,0 +1,11 @@
+.container{
+    width: 100%;
+}
+.campaign{
+    width: 100%;
+}
+.campaign img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}

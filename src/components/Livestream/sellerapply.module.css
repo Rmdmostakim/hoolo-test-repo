@@ -1,0 +1,370 @@
+.sectionContainer{
+    width: 100%;
+    background-color: #D8EAFD !important;
+}
+.headingBox{
+    width: 100%;
+    padding: 5%;
+    background-color: #fffcf1;
+}
+.headingBox .heading{
+    width: 100%;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+}
+.heading .headingText{
+    width: 30%;
+}
+.heading .headingText h2{
+    width: 80%;
+    font-size: 60px;
+    text-align: left;
+    color: #1C405D;
+}
+.heading .headingText h4{
+    text-align: left;
+    color: #1C405D;
+}
+.heading .headingImage{
+    width: 70%;
+    text-align: right;
+}
+.heading .headingImage img{
+    width: 70%;
+}
+
+.streamerBox{
+    width: 90%;
+    padding: 5%;
+    background-color: #D8EAFD;
+}
+.streamerBox .stremerHeading{
+    width: 100%;
+    display: inline-flex;
+    text-align: center;
+}
+.streamerBox .stremerHeading .stremerIcon1,.streamerBox .stremerHeading .stremerIcon2{
+    width: 10%;
+}
+.streamerBox .stremerHeading .streamerText{
+    width: 80%;
+    text-align: center;
+}
+.stremerHeading .stremerIcon1{
+    text-align: right;
+    margin-top: 3rem;
+}
+.stremerHeading .stremerIcon2{
+    text-align: left; 
+}
+.stremerHeading .stremerIcon1 img,.stremerHeading .stremerIcon2 img{
+    width: 60%;
+}
+
+.streamerBox .stremerHeading .streamerText h2{
+    font-size: 60px;
+    color: #1893F8;
+}
+.streamerBox .stremerHeading .streamerText h6{
+    width: 80%;
+    text-align: center;
+}
+.streamerBox .streamerInfo{
+    background-image: url('./img/bg-2.svg');
+    background-repeat: no-repeat;
+    background-size:88%;
+    background-position: center center;
+    padding: 2rem;
+    height: 400px;
+}
+.streamerInfoContainer{
+    width: 50%;
+    margin-left: 27%;
+    text-align: center;
+}
+.streamerInfoIcons{
+    width: 50%;
+    float: left;
+}
+.streamerInfoIcons img{
+    width: 60px;
+}
+.streamerInfoIcons span{
+    position: relative;
+    font-weight: bold;
+}
+.sellerAccount{
+    width: 30%;
+    margin-left: 35%;
+    text-align: center;
+}
+.sellerAccount p{
+    margin-bottom: 2rem;
+}
+.sellerAccount a{
+    background-color: #209AFC;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+}
+.storeBox{
+    width: 90%;
+    padding: 5%;
+    background-color: #D8EAFD;
+    height: 450px;
+}
+.storeBox .storeImage{
+    width: 50%;
+    float: left;
+}
+.storeImage img{
+    width: 80%;
+}
+.storeBox .storeInfo{
+    float: left;
+    width: 50%;
+}
+.storeInfo .storeInfoHeading{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.storeInfoHeading h2{
+    width: 50%;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.storeInfoHeading h4{
+    width: 80%;
+}
+.storeBox .storeInfo .storeInfoInfo{
+    width: 100%;
+}
+.storeInfoInfo .storeInfoInfoIcons{
+    width: 50%;
+    float: left;
+}
+.storeInfoInfoIcons img{
+    width: 60px;
+}
+.storeInfoInfoIcons span{
+    position: relative;
+}
+.storeInfo .storeInfoBtns{
+    width: 100%;
+}
+.storeInfoBtns h4{
+    color: #6C12FF;
+    margin-bottom: 2rem;
+}
+.storeInfoBtns a{
+    text-decoration: none;
+}
+.storeInfoBtns a:nth-child(2){
+    background-color: #1C405D;
+    color: #ffffff;
+    padding: 10px;
+}
+.storeInfoBtns a:nth-child(3){
+    border: 1px solid #1C405D;
+    padding: 9px;
+}
+.faqBox{
+    width: 90%;
+    padding: 5%;
+    background-color: #D8EAFD;
+    min-height: 300px;
+}
+.faqBox h2{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.faqBox .faq{
+    width: 100%;
+    margin-top: 2rem;
+
+}
+.faq .questions{
+    width: 40%;
+    float: left;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+    background-color: #ffffff;
+    border: 1px solid #b5b0b05e;
+    border-radius: 2px;
+    box-shadow: 1px 1px #b5b0b05e;
+    margin-bottom: 1rem;
+}
+.questions .questionsTitle{
+    height: 40px;
+    padding: 3px;
+}
+.questions .questionsTitle p{
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+.questionsTitle span:nth-child(1){
+    width: 90%;
+    float: left;
+}
+.questionsTitle span:nth-child(2){
+    width: 10%;
+    float: right;
+    color: #6cffc1;
+    font-size:35px;
+}
+.answer{
+    padding: 5px;
+    text-align: justify;
+}
+.sectionContainer .meetBox{
+    width: 100%;
+    padding: 5%;
+    background-color: #D8EAFD;
+    height: 350px;
+}
+.meetBox .meetInfo{
+    width: 50%;
+    float: left;
+}
+.meetBox .meetInfo .meetBtn{
+    width: 50%;
+    margin-left: 25%;
+}
+.meetBtn h2{
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #00345F;
+    margin-bottom: 2rem;
+}
+.meetBtn a{
+    text-decoration: none;
+    background-color: #8A44FC;
+    font-size: large;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.meetBox .meetImg{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.meetBox .meetImg img{
+    width: 100%;
+}
+@media only screen and (min-width: 766px) and (max-width: 1024px){
+    h2{
+        font-size: 30px !important;
+    }
+}
+@media only screen and (max-width: 767px){
+    .headingBox .heading{
+        display: inline-block;
+        text-align: center;
+    } 
+    .heading .headingText{
+        width: 100%;
+    }
+    .heading .headingText h2{
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+    .heading .headingText h4{
+        text-align: center;
+        font-size: 12px;
+    }  
+    .heading .headingImage{
+        width: 100%;
+        text-align: center;
+    }
+    .heading .headingImage img{
+        width: 100%;
+    }
+    .streamerBox .stremerHeading .streamerText h2{
+        font-size: 20px;
+    }
+    .streamerBox .stremerHeading .streamerText h6{
+        width: 100%;
+        text-align: justify;
+    }
+    .stremerHeading .stremerIcon1{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .stremerHeading .stremerIcon2{
+        text-align: center; 
+    }
+    .streamerBox .streamerInfo{
+        background-image: none;
+        height: 300px;
+    }
+    .streamerInfoContainer{
+        width: 100%;
+        margin-left: 0;
+        text-align: left;
+    }
+    .streamerInfoIcons{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .sellerAccount{
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .storeBox .storeImage{
+        display: none;
+    }
+    .storeInfo .storeInfoHeading{
+        display: none;
+    }
+    .storeInfo .storeInfoInfo{
+        display: none;
+    }
+    .storeBox .storeInfo{
+        width: 100%;
+        text-align: center;
+    }
+    .storeBox {
+        height: 85px;
+    }
+    .faqBox{
+        height: 500px;
+    }
+    .faq .questions{
+        width: 90%;
+    }
+    .sectionContainer .meetBox{
+        width: 90%;
+        padding: 5%;
+        background-color: #D8EAFD;
+    }
+    .meetBox .meetInfo{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .meetBox .meet-info .meetBtn{
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .meetBtn h2{
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #00345F;
+        margin-bottom: 2rem;
+    }
+    .meetBox .meetImg{
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .meetBox .meetImg img{
+        width: 100%;
+    }
+}
