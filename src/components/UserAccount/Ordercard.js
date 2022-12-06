@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import {BsCaretUpFill,BsCaretDownFill} from 'react-icons/bs';
 import Class from '../../assets/css/dashboard.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Ordercard(props) {
     const {order} = props;
@@ -102,7 +103,7 @@ export default function Ordercard(props) {
                         </Col>
                         <Col md={4} sm={12} style={style} className="mb-2">
                             <div>
-                                <Button variant='success' size="sm">Invoice</Button>
+                                <a href={`https://shop.hoolo.live/api/invoice/${order.order_code}`} target="_blank">Invoice</a>
                             </div>
                             <div>
                                 <Button variant='none' siz="sm" onClick={showHandeler}>

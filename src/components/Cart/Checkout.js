@@ -160,7 +160,7 @@ export default function Checkout(){
   const saveAddress = () =>{  
     const regex = /(^(8801|01))[1|3-9]{1}(\d){8}$/;
     let phone = credentials.phone;
-    phone = phone.substr(1,phone.length);
+   // phone = phone.substr(1,phone.length);
     const valid = regex.test(phone);
     if(valid){
       axios.post(`${baseUrl}store-shippingaddress`,credentials)

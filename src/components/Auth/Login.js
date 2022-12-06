@@ -11,49 +11,23 @@ import { getCart } from "../../features/CartSlice";
 import gmail from './gmail.png';
 import Classes from './login.module.css';
 import logo from '../../assets/images/Hooloo.svg';
-import ss from '../../assets/images/LOGSS3.png'
+import ss from '../../assets/images/LOGSS3.png';
+import {AiOutlineRight,AiOutlineLeft} from 'react-icons/ai';
+
 function Login() {
   const dispatch = useDispatch();
   const location = useLocation();
   //login credentials handler
+  const baseUrl = 'https://shop.hoolo.live/api/';
   const navigate = useNavigate();
-  const [isLoading, setLoading] = useState(false);
-  const [errors, setErrors] = useState(null);
-  const [message, setMessage] = useState(null);
-  const [credentials,setCredentials] = useState({phone:'',password:''});
+  const [credentials,setCredentials] = useState({phone:'',password:'',username:'',otp:''});
   const credentialsHandler = (event) =>{
     const {name,value} = event.target;
     setCredentials({ ...credentials, [name]: value });
   }
-  const submitHandler = (event) =>{
-    event.preventDefault();
-    setLoading(true);
-    axios.post('https://shop.hoolo.live/api/react/login',credentials)
-    .then((res)=>{
-      if (res.status === 202) {
-        setLoading(false);
-        dispatch(setProfile(res.data));
-        dispatch(getCart());
-        navigate(-1, { replace: true });
-    } else if (res.status === 201) {
-        setLoading(false);
-        setErrors(null);
-        setMessage(res.data);
-    } else {
-        setLoading(false);
-        setMessage(null);
-        setErrors(res.data);
-    }
-    })
-    .catch((error)=>{
-        setLoading(false);
-        setErrors(null);
-        setMessage(error.message);
-    });
-  }
+
   // socila login
   const socialLoginHandler = async () => {
-      setLoading(true);
       const result = await socialLogin(google);
       if(result){
         const name = result.user.displayName;
@@ -64,114 +38,216 @@ function Login() {
         axios.post('https://shop.hoolo.live/api/react/socialLogin',{name,email,mobile:phone,image:photo,password:uid})
         .then((res)=>{
           if (res.status === 202) {
-              setLoading(false);
               dispatch(setProfile(res.data));
               dispatch(getCart());
               navigate('/', { replace: true });
           }else {
-              setLoading(false);
-              setMessage(null);
-              setErrors(res.data);
+            toast.error('Something went wrong! Try again');
           }
         })
         .catch((error)=>{
-            setLoading(false);
-            setErrors(null);
-            setMessage(error.message);
+          toast.error('Something went wrong! Try again');
         });
       }else{
-        setLoading(false);
-        setMessage(null);
-        setErrors(null);
         toast.error('Something went wrong! Try again');
       }
   };
-  // errors handleing
-  const loading = () => (
-      <div className="text-primary mb-2 text-center">
-          <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />
-          Processing...
-      </div>
-  );
-  const errorMessage = () => (
-      <div className="p-1 bg-info bg-opacity-10 rounded text-danger mb-2">
-          <small className="text-capitalize">{message}</small>
-      </div>
-  );
-  const errorList = () => {
-      const errMsgs = Object.values(errors);
-      return (
-          <div className="p-1 bg-info bg-opacity-10 rounded text-danger mb-2">
-              {errMsgs.map((msg) => (
-                  <small key={Math.random()}>
-                      {msg}
-                      <br />
-                  </small>
-              ))}
-          </div>
-      );
-  };
+
   useEffect(()=>{
     window.scrollTo({
         top: 0,
     });
   });
+
+  const [issetPhone,setPhone] = useState(false);
+  const [issetOtp,setOtp] = useState(false);
+  const [issetUsername,setUsername] = useState(false);
+  const [issetPassword,setPassword] = useState(false);
+  const [isphoneExists,setPhoneExist] = useState(false);
+
+  const nextToPhone = () =>{
+    let phone = credentials.phone;
+    const dialCode = phone.includes('+');
+    if(dialCode){
+      phone = phone.substr(1,phone.length);
+    }
+    const regex = /(^(8801|01))[1|3-9]{1}(\d){8}$/;
+    const valid = regex.test(phone);
+    if(valid){
+      axios.post(`${baseUrl}phone/exists`,{phone:credentials.phone})
+      .then((res)=>{
+        const {status} = res;
+        if(status === 200){
+          setPhoneExist(true);
+          setPhone(true);
+        }else{
+          setPhoneExist(false);
+          setPhone(true);
+        }
+      })
+      .catch((error)=>{
+        toast.error('Something went wrong! Try again');
+      });
+    }else{
+      toast.error('Invalid phone number');
+      setPhone(false);
+    }
+  }
+  const nextToOtp = () =>{
+    const otp = credentials.otp;
+    if(otp.trim().length>3){
+      axios.post(`${baseUrl}otp/verify`,{phone:credentials.phone,otp:otp})
+      .then((res)=>{
+        const {status} = res;
+        if(status === 202){
+          setOtp(true);
+        }else{
+          setOtp(false);
+          toast.error('Invalid OTP');
+        }
+      })
+      .catch(()=>{
+        toast.error('Something went wrong! Try again');
+      });
+    }else{
+      toast.error('Invalid OTP');
+    }
+  }
+
+  const comfirmHandler = () =>{
+    if(credentials.password.trim().length>5){
+      if(isphoneExists){
+        const loginCredentials = {
+          phone:credentials.phone,
+          password: credentials.password,
+        }
+        axios.post('https://shop.hoolo.live/api/react/login',loginCredentials)
+        .then((res)=>{
+          if (res.status === 202) {
+              dispatch(setProfile(res.data));
+              dispatch(getCart());
+              navigate(-1, { replace: true });
+          } else{
+            toast.error('Wrong password.Enter valid password');
+          }
+        })
+        .catch((error)=>{
+          toast.error('Something went wrong please try again later');
+        });
+      }else{
+        const regCredentials = {
+          phone:credentials.phone,
+          password: credentials.password,
+          username: credentials.username,
+        }
+      }
+    }else{
+      toast.error('Password must be greater than 5 characters');
+    }
+  }
+
+  const phoneView = () =>{
+    return (
+      <div>
+        <Form.Group className="mb-1">
+          <Form.Label>PHONE</Form.Label>
+          <Form.Control onChange={credentialsHandler} value={credentials.phone} type="text" name="phone" placeholder="Enter your phone number" />
+          <small>You may recieve SMS notifications from us for security and login purposes</small>
+        </Form.Group>
+        <div className="text-center">
+          <Button variant="none" size="sm" onClick={nextToPhone} style={{width:'100%',backgroundColor:'#1C405D',color:'white',borderRadius:'2px', margin:'1rem 0rem', padding:'5px'}}>
+            Next <AiOutlineRight/>
+          </Button>
+        </div>
+      </div>
+    );
+  };
+
+  const otpView = () =>{
+    return (
+      <div>
+        <Form.Group className="mb-1">
+          <Form.Label>OTP</Form.Label>
+          <Form.Control onChange={credentialsHandler} value={credentials.otp} type="text" name="otp" placeholder="Enter your otp" />
+        </Form.Group>
+        <div className="text-center">
+          <Button variant="none" size="sm" onClick={nextToOtp} style={{width:'100%',backgroundColor:'#1C405D',color:'white',borderRadius:'2px', margin:'1rem 0rem', padding:'5px'}}>
+            Next <AiOutlineRight/>
+          </Button>
+        </div>
+        <div className='d-flex justify-content-between'>
+          <Button variant="warning" size="sm"><b><AiOutlineLeft/>Change Number</b></Button>
+          <Button variant="warning" size="sm"><b>Resend OTP<AiOutlineRight/></b></Button>
+        </div>
+      </div>
+    );
+  };
+
+  const usernameView = () =>{
+    return (
+      <div>
+        <Form.Group className="mb-1">
+          <Form.Label>USERNAME</Form.Label>
+          <Form.Control onChange={credentialsHandler} value={credentials.username} type="text" name="username" placeholder="Enter username" />
+        </Form.Group>
+        <div className="text-center">
+          <Button variant="none" size="sm" style={{width:'100%',backgroundColor:'#1C405D',color:'white',borderRadius:'2px', margin:'1rem 0rem', padding:'5px'}}>
+            Next <AiOutlineRight/>
+          </Button>
+        </div>
+      </div>
+    );
+  };
+
+  const passwordView = () =>{
+    return (
+      <div>
+        <Form.Group className="mb-1">
+          <Form.Label>PASSWORD</Form.Label>
+          <Form.Control onChange={credentialsHandler} value={credentials.password} type="password" name="password" placeholder="Enter password" />
+        </Form.Group>
+        <div className="text-center">
+          <Button variant="none" size="sm" onClick={comfirmHandler} style={{width:'100%',backgroundColor:'#1C405D',color:'white',borderRadius:'2px', margin:'1rem 0rem', padding:'5px'}}>
+            Confirm
+          </Button>
+        </div>
+        {isphoneExists && (
+          <div>
+            <p style={{margin: '0px'}}>Forget password? <Link to="/forget-password" style={{color:"blue"}}>Click Here</Link> </p>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+
   return (
     <div className='container'>
       <div className={Classes.loginForm}>
       
         <Row className="justify-content-center align-items-center">
-          <Col className={Classes.ssCol} lg={2} md={12} sm={12}></Col>
           <Col className={Classes.ssCol} lg={4} md={6} sm={12}>
-
               <img className={Classes.ssImg} src={ss} alt="hoolo"/>
-
           </Col>
           <Col lg={4} md={6} sm={12}>
             <div className='card login' style={{padding:'2rem 1rem'}}>
-              <div className={Classes.logo}>
-                <img src={logo} alt="hoolo"/>
-              </div>
-              {isLoading && loading()}
-              {errors && errorList()}
-              {message && errorMessage()}
-              <Form onSubmit={submitHandler}>
-                <Form.Group className="mb-1">
-                  <Form.Label>Phone</Form.Label>
-                  <Form.Control onChange={credentialsHandler} value={credentials.phone} type="text" name="phone" placeholder="Enter your phone number" />
-                </Form.Group>
-                <Form.Group className="mb-1">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control onChange={credentialsHandler} value={credentials.password} type="password" name="password" placeholder="Enter your password" />
-                </Form.Group>
-                <div className="text-center">
-                  <Button variant="none" size="sm" type="submit" style={{width:'100%',backgroundColor:'#1C405D',color:'white',borderRadius:'2px', margin:'1rem 0rem', padding:'5px'}}>
-                    Login
-                  </Button>
-                </div>
+              <Form>
+                {!issetPhone && phoneView()}
+                {issetPhone && !isphoneExists && !issetOtp &&otpView()}
+                {issetOtp && usernameView()}
+                {issetUsername || isphoneExists && passwordView()}
               </Form>
-              <div>
-                <Button
-                      variant="none"
-                      size="sm"
-                      onClick={socialLoginHandler}
-                  >
-                  <img className={Classes.socialIcon} src={gmail}  alt="hoolo" /> <small>Login with Google</small>
-                  </Button>
-              </div>
-              <div>
-                <p style={{margin: '0px'}}>Forget password? <Link to="/forget-password" style={{color:"blue"}}>Click Here</Link> </p>
-              </div>
             </div>
-            <div className='card'  style={{padding:'1rem'}}>
-              <p style={{margin: '0px'}}>Do not have account? <Link to="/registration" style={{color:"blue"}}>Sign Up</Link></p>
+            <div className='card'>
+              <Button variant="none" size="sm" onClick={socialLoginHandler}>
+                <img className={Classes.socialIcon} src={gmail}  alt="hoolo" /> <small>Login with Google</small>
+              </Button>
             </div>
           </Col>
-          <Col className={Classes.ssCol} lg={2} md={12} sm={12}></Col>
         </Row>
       </div>
     </div>
-  )
+  );
 }
 
 export default Login;

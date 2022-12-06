@@ -4,16 +4,21 @@ import Class from './settings.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import user  from '../Video/Comments/user.png';
 import {AiFillEdit} from 'react-icons/ai';
+import {BiLogOutCircle} from 'react-icons/bi';
 import {ImBin2} from 'react-icons/im';
 import { Modal, Button,Input } from 'rsuite';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { setProfile } from '../../features/ProfileSlice';
 import { useEffect } from 'react';
+import {logout} from "../Auth/firebase";
+import { logoutCart } from "../../features/CartSlice";
+import {useNavigate} from "react-router-dom";
 
 export default function Settings() {
     const {id,name,mobile,address,avatar,social,email} = useSelector((state)=>state.profile);
     const dispatch = useDispatch();
+    const history = useNavigate();
     const [addresses,setAddresses] = useState(null);
     const [profileModal,setProfileModal] = useState(false);
     const handleProfileModalOpen = () => {setProfileModal(true);setCredentials(initialCredentials)};
@@ -208,6 +213,18 @@ export default function Settings() {
         });
     }
 
+    const Signout = () => {
+        logout();
+        localStorage.removeItem("id");
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        localStorage.removeItem("avatar");
+        localStorage.removeItem("mobile");
+        localStorage.removeItem("address");
+        dispatch(logoutCart());
+        history("/login",{replace:true});
+    };
+
     useEffect(()=>{
         getAddresses();
     },[addresses]);
@@ -228,6 +245,7 @@ export default function Settings() {
                         </div>
                         <div>
                             <h6><small className="font-weight-bold text-dark">{name.toUpperCase()}</small></h6>
+                            <Button size="sm" appearance="subtle" onClick={Signout}><BiLogOutCircle/> Logout</Button>
                         </div>
                     </div>
                 </Col>
